@@ -6,6 +6,7 @@ export const ajouclubs = [
     },
     {
         "href": "/UMC",
-        "name": "UMC Ajou"
+        "name": "UMC Ajou",
+        "img": "./umc.png"
     },
 ]

@@ -9,7 +9,7 @@ export const scienceclub= [
     "activity":"코딩, 스터디, 프로젝트, 깜짝모임 등",
     },
     {
-    "href": "ATOM",
+    "href": "/ATOM",
     "name": "ATOM(로봇)",
     "location": "동아리방 위치: 신학생회관 405호",
     "phone": "연락처: 010-7475-4563",
