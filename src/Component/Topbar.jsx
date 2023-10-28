@@ -10,37 +10,20 @@ import { ajouclubs } from '../infor/ajouclubs';
 
 const Topbar = () => {
     return (
-        <div>
-            <Navbar bg="light" data-bs-theme="light">
+        <div >
+            <Navbar bg="light" data-bs-theme="light" className="Navbar">
                 <Container>
-                    <Navbar.Brand href="/">Navbar</Navbar.Brand>
-                    <Nav className="me-auto">
-                        <NavDropdown title="정동아리" id="basic-nav-dropdown">
+                    <Navbar.Brand href="/"><img src="./modong.png" className="NavbarImg"/></Navbar.Brand>
+                    <Nav className="me-auto">{/* 
+                        <NavDropdown title="동아리 소개" id="basic-nav-dropdown">
                             {clubs.map((club, index) => (
                                 <NavDropdown.Item href={club.href}>{club.name}</NavDropdown.Item>
                             ))}
 
-                        </NavDropdown>
-                        <NavDropdown title="준동아리" id="basic-nav-dropdown">
-                            {clubs.map((club, index) => (
-                                <NavDropdown.Item href={club.href}>{club.name}</NavDropdown.Item>
-                            ))}
-
-                        </NavDropdown>
-                        <NavDropdown title="소학회" id="basic-nav-dropdown">
-                            {clubs.map((club, index) => (
-                                <NavDropdown.Item href={club.href}>{club.name}</NavDropdown.Item>
-                            ))}
-
-                        </NavDropdown>
-                        <NavDropdown title="연합동아리" id="basic-nav-dropdown">
-                            {ajouclubs.map((club, index) => (
-                                <NavDropdown.Item href={club.href}>{club.name}</NavDropdown.Item>
-                            ))}
-
-                        </NavDropdown>
-                        <Nav.Link href="/concert">공연 정보</Nav.Link>
-                        <Nav.Link href="/announce">공지사항</Nav.Link>
+                        </NavDropdown> */}
+                        <Nav.Link href="/clubinfo" className="navbarName">동아리 소개</Nav.Link>
+                        <Nav.Link href="/concert" className="navbarName">공연 정보</Nav.Link>
+                        <Nav.Link href="/announce" className="navbarName">공지사항</Nav.Link>
                     </Nav>
                     <Nav>
                         <Nav.Link eventKey={1} href="/login">
