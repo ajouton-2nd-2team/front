@@ -8,6 +8,7 @@ import { ajouclubs } from './infor/ajouclubs';
 import Login from './Component/Login';
 import Concert from './Component/Concert';
 import Announce from './Component/Announce';
+import Admin from './Component/Admin';
 
 function App() {
   return (
@@ -19,6 +20,7 @@ function App() {
           <Route path="/Announce" element={<Announce />} />
           <Route path="/concert" element={<Concert />} />
           <Route path="/clubInfo" element={<ClubInfo />} />
+          <Route path="/admin" element={<Admin />} />
           {scienceclub.map((club, index) => (
             <Route key={index} path={club.href} element={<Club club={club} />} />
           ))}
