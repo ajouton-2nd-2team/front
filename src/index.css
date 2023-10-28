@@ -27,11 +27,12 @@ code {
 
 .infoButton {
   width: 500px;
-  display:flex;
+  display: flex;
   flex-direction: row;
   justify-content: space-around;
   margin-top: 10px;
 }
+
 .button {
   width: 200px;
 
@@ -69,6 +70,7 @@ input {
   flex-direction: column;
   align-items: center;
 }
+
 form {
   display: flex;
   flex-direction: column;
@@ -90,7 +92,37 @@ form {
   flex-direction: row;
   align-items: center;
 }
+
 .new {
   background: transparent;
   border: none;
+}
+
+.Navbar {
+  height: 170px;
+}
+.NavbarImg {
+  width: 156px;
+  height: 84px;
+}
+.navbarName {
+  font-size: 28px;
+}
+
+.header {
+  background-color: #04b853;
+  height: 240px;
+  color: #fff;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding-left: 20px;
+}
+
+.header h1 {
+  font-size: 50px;
+}
+
+.header h6 {
+  font-size: 36px;
 }
