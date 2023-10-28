@@ -7,7 +7,7 @@ const Main = () => {
             <Topbar fixed="top" />
             <div className='mainContent'> 
                 <img src="./main1.jpg" className="main1"/>
-                <p className = 'mainP'>2023 - 우수동아리</p>
+                <p className = 'mainP' >2023 - 우수동아리</p>
                 <img src="./main2.jpg" className="main2"/>
             </div>
             
