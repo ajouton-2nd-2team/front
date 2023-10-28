@@ -1,0 +1,18 @@
+export const clubs = [
+    {"href": "/고슴도치",
+    "name": "고슴도치(창작만화)"},
+    {"href": "/AKO",
+    "name": "AKO(화장품)"},
+    {"href": "/녹두벌",
+    "name": "녹두벌(풍물패)"},
+    {"href": "/늘사랑",
+    "name": "늘사랑(봉사)"},
+    {"href": "/돌벗",
+    "name": "돌벗(바둑)"},
+    {"href": "/Drop-In",
+    "name": "Drop-In(스노우보드)"},
+    {"href": "/masterpiece",
+    "name": "마스터피스(댄스)"},
+    {"href": "/menchar",
+    "name": "맨차(여자축구)"},
+]
