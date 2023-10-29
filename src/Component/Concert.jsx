@@ -74,7 +74,7 @@ const Concert = () => {
                 <div style={{ width: "80%", height: "80%"}}>
                     <Calendar cellRender={cellRender} style={{ fontSize: "1.2em" }} />
                 </div>
-                <div style={{ width: "40%", height: "700px", marginLeft: "4%", border: "1px solid gray", borderRadius: "10px", padding: "10px" }}>
+                <div style={{ width: "40%", height: "100%", marginLeft: "4%", border: "1px solid gray", borderRadius: "10px", padding: "10px" }}>
                     <h1 style={{marginBottom : "20px"}}>오늘의 일정</h1>
                     <div style={{ display: "flex", flexDirection: "row", marginBotton: "10px"}}>
                         <img src="./카포.png" style={{ marginRight: "2%" }} />
