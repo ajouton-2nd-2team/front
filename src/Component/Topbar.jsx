@@ -23,23 +23,24 @@ const Topbar = () => {
                     'X-ACCESS-TOKEN': token
                 }
             })
-            .then(response => response.json())
-            .then(data => {
-                setIsAdmin(data.result);
-            })
-            .catch(error => {
-                console.error('관리자 권한 확인 중 오류 발생:', error);
-            });
+                .then(response => response.json())
+                .then(data => {
+                    setIsAdmin(data.result);
+                })
+                .catch(error => {
+                    console.error('관리자 권한 확인 중 오류 발생:', error);
+                });
         }
     }, [token]);
 
-    
+
     const logout = () => {
         setToken(null);
         localStorage.clear();
+        setIsAdmin(false);
     }
 
-    
+
     return (
         <div >
             <Navbar bg="light" data-bs-theme="light" className="Navbar">
@@ -57,13 +58,13 @@ const Topbar = () => {
                         <Nav.Link href="/announce" className="navbarName">공지사항</Nav.Link>
                     </Nav>
                     <Nav>
-                        
+
                         {isAdmin ? (
                             <Nav.Link href="/admin" className="navbarName">관리자</Nav.Link>
                         ) : null}
                         {token ?
                             (
-                                <button eventKey={1} onClick={logout} style={{border: "none", backgroundColor: "white"}}>
+                                <button eventKey={1} onClick={logout} style={{ border: "none", backgroundColor: "white" }}>
                                     로그아웃
                                 </button>
                             )
