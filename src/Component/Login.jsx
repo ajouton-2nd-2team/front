@@ -1,17 +1,20 @@
 import Topbar from './Topbar';
-import { useState, useEffect } from 'react';
+import { useState, useContext } from 'react';
+import { useNavigate } from 'react-router-dom';
 
 const Login = () => {
-    const userData = {
-        id: '',
+
+    const navigate = useNavigate();
+    const data = {
+        email: '',
         password: '',
     };
 
-    const [id, setId] = useState('');
+    const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
 
-    const changeId = (e) => {
-        setId(e.target.value);
+    const changeemail = (e) => {
+        setEmail(e.target.value);
     }
 
     const changePassword = (e) => {
@@ -19,24 +22,25 @@ const Login = () => {
     }
 
     const changeUserData = () => {
-        userData.id = id;
-        userData.password = password;
-        console.log(userData);
+        data.email = email;
+        data.password = password;
 
-        const jsonPayload = JSON.stringify(userData);
+        const jsonPayload = JSON.stringify(data);
 
         // POST 요청 보내기
-        fetch('https://localhost:3000/userData', {
+        fetch('http://api.ajouthon.sheenji.com:8080/users/login', {
             method: 'POST', // POST 요청
             headers: {
                 'Content-Type': 'application/json', // JSON 데이터임을 지정
+                'Access-Control-Allow-Origin': '*'
             },
             body: jsonPayload, // JSON 데이터를 요청 본문에 포함
         })
             .then(response => response.json())
             .then(data => {
                 // 서버로부터의 응답 처리
-                console.log(data);
+                localStorage.setItem('token', data.result);
+                navigate('/');
             })
             .catch(error => {
                 console.error('API 요청 중 오류 발생:', error);
@@ -55,8 +59,8 @@ const Login = () => {
                     <form>
                         <label>
                             <input placeholder="아이디"
-                                value={id}
-                                onChange={changeId} />
+                                value={email}
+                                onChange={changeemail} />
                         </label>
                         <label>
                             <input placeholder="비밀번호"

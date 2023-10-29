@@ -9,27 +9,30 @@ import Login from './Component/Login';
 import Concert from './Component/Concert';
 import Announce from './Component/Announce';
 import Admin from './Component/Admin';
+import React, { useState } from 'react';
+
 
 
 function App() {
+
   return (
     <div className="App">
-      <Router>
-        <Routes>
-          <Route path="/" element={<Main />} />
-          <Route path="/login" element={<Login />} />
-          <Route path="/Announce" element={<Announce />} />
-          <Route path="/concert" element={<Concert />} />
-          <Route path="/clubInfo" element={<ClubInfo />} />
-          <Route path="/admin" element={<Admin />} />
-          {scienceclub.map((club, index) => (
-            <Route key={index} path={club.href} element={<Club club={club} />} />
-          ))}
-          {ajouclubs.map((club, index) => (
-            <Route key={index} path={club.href} element={<Club club={club} />} />
-          ))}
-        </Routes>
-      </Router>
+        <Router>
+          <Routes>
+            <Route path="/" element={<Main />} />
+            <Route path="/login" element={<Login/>} />
+            <Route path="/Announce" element={<Announce />} />
+            <Route path="/concert" element={<Concert />} />
+            <Route path="/clubInfo" element={<ClubInfo />} />
+            <Route path="/admin" element={<Admin />} />
+            {scienceclub.map((club, index) => (
+              <Route key={index} path={club.href} element={<Club club={club}/>} />
+            ))}
+            {ajouclubs.map((club, index) => (
+              <Route key={index} path={club.href} element={<Club club={club} />} />
+            ))}
+          </Routes>
+        </Router>
     </div>
   );
 }

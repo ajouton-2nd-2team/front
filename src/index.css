@@ -2,9 +2,9 @@ body {
   margin: 0;
   font-family: 'Noto Sans KR',-apple-system,  BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
     'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue', sans-serif;
-    
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  font-size: larger;
 }
 
 code {
@@ -103,11 +103,16 @@ form {
   height: 100px;
 }
 .NavbarImg {
-  width: 156px;
-  height: 84px;
+  width: 100px;
+  height: 50px;
 }
 .navbarName {
-  font-size: 28px;
+  font-size: 20px;
+  font-weight: bold;
+}
+
+.navbarName:hover {
+  color: #04b853;
 }
 
 .header {
