@@ -7,7 +7,7 @@ import React, { useEffect, useState } from 'react';
 
 
 const Topbar = () => {
-
+    const result = true;
     const [token, setToken] = useState('');
 
     useEffect(() => {
@@ -39,6 +39,12 @@ const Topbar = () => {
                         <Nav.Link href="/announce" className="navbarName">공지사항</Nav.Link>
                     </Nav>
                     <Nav>
+                        {result ? (
+                        <Nav.Link href="/announce" className="navbarName">관리자</Nav.Link>
+                        )
+                        :
+                        (<></>)
+                    }
                         {token ?
                             (
                                 <button eventKey={1} onClick={logout} style={{border: "none", backgroundColor: "white"}}>
