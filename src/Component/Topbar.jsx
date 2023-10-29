@@ -7,8 +7,8 @@ import React, { useEffect, useState } from 'react';
 
 
 const Topbar = () => {
-    const result = true;
     const [token, setToken] = useState('');
+    const [isAdmin, setIsAdmin] = useState(false);
 
     useEffect(() => {
         // 로컬 스토리지에서 토큰을 가져옴
@@ -16,11 +16,30 @@ const Topbar = () => {
         if (storedToken) {
             setToken(storedToken);
         }
-    });
+        if (token) {
+            fetch('http://api.ajouthon.sheenji.com:8080/users/isAdmin', {
+                method: 'GET',
+                headers: {
+                    'X-ACCESS-TOKEN': token
+                }
+            })
+                .then(response => response.json())
+                .then(data => {
+                    setIsAdmin(data.result);
+                })
+                .catch(error => {
+                    console.error('관리자 권한 확인 중 오류 발생:', error);
+                });
+        }
+    }, [token]);
+
+
     const logout = () => {
         setToken(null);
         localStorage.clear();
+        setIsAdmin(false);
     }
+
 
     return (
         <div >
@@ -39,15 +58,13 @@ const Topbar = () => {
                         <Nav.Link href="/announce" className="navbarName">공지사항</Nav.Link>
                     </Nav>
                     <Nav>
-                        {result ? (
-                        <Nav.Link href="/admin" className="navbarName">관리자</Nav.Link>
-                        )
-                        :
-                        (<></>)
-                    }
+
+                        {isAdmin ? (
+                            <Nav.Link href="/admin" className="navbarName">관리자</Nav.Link>
+                        ) : null}
                         {token ?
                             (
-                                <button eventKey={1} onClick={logout} style={{border: "none", backgroundColor: "white"}}>
+                                <button eventKey={1} onClick={logout} style={{ border: "none", backgroundColor: "white" }}>
                                     로그아웃
                                 </button>
                             )
