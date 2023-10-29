@@ -5,8 +5,8 @@ import Modal from 'react-bootstrap/Modal';
 
 const Admin = () => {
   const [dummy, setDummy] = useState([
-    { name: '황은비', department: '디지털미디어학과', stuNum: '202127235', phone: '010-1234-5678', date: '2023-10-25', state: '등록보류' },
-    { name: '한소진', department: '소프트웨어학과', stuNum: '201920753', phone: '010-9876-5432', date: '2023-10-25', state: '등록완료' },
+    { name: '황은비', department: '디지털미디어학과', stuNum: '202127235', phone: '010-1234-5678', date: '2023-10-29', state: '등록보류' },
+    { name: '한소진', department: '소프트웨어학과', stuNum: '201920753', phone: '010-9876-5432', date: '2023-10-28', state: '등록완료' },
   ]);
 
   let apply = new Array();
