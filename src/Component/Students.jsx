@@ -58,6 +58,19 @@ const Students = () => {
     setIsModalOpen(false);
   };
 
+  const handleNonCompleteRegistration = (selectedStudent) => {
+    const index = apply.findIndex(item => item == selectedStudent);
+    console.log(index);
+    if (index !== -1) {
+      
+      apply[index].isAccept = false;
+      closeModal();
+    } else {
+      console.log('The element was not found');
+      closeModal();
+    };
+  }
+
   const handleCompleteRegistration = (selectedStudent) => {
     const index = apply.findIndex(item => item == selectedStudent);
     console.log(index);
@@ -115,7 +128,7 @@ const Students = () => {
               <pre>   <b>번호</b>   |      {selectedStudent.phoneNumber}</pre>
             </Modal.Body>
             <Modal.Footer>
-              <Button variant="success" onClick={closeModal}>
+              <Button variant="success" onClick={() => handleNonCompleteRegistration(selectedStudent)}>
                 등록보류
               </Button>
               <Button variant="success" onClick={() => handleCompleteRegistration(selectedStudent)}>
