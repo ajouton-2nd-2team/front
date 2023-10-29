@@ -40,7 +40,7 @@ const Topbar = () => {
                     </Nav>
                     <Nav>
                         {result ? (
-                        <Nav.Link href="/announce" className="navbarName">관리자</Nav.Link>
+                        <Nav.Link href="/admin" className="navbarName">관리자</Nav.Link>
                         )
                         :
                         (<></>)
